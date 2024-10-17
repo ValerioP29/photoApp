@@ -1,0 +1,26 @@
+<div class="container mt-4">
+  <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+  <div class="mt-4">
+    <h4>Foto preferite: {{ likedCount }}</h4>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4" *ngFor="let photo of photos">
+    <div class="card mb-4">
+      <img
+        [src]="photo.thumbnailUrl"
+        class="card-img-top"
+        alt="{{ photo.title }}"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ photo.title }}</h5>
+        <button class="btn btn-danger" (click)="deletePhoto(photo.id)">
+          Cancella
+        </button>
+        <button class="btn btn-primary" (click)="likePhoto(photo.id)">
+          Mi Piace
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

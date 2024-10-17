@@ -15,7 +15,7 @@ export class PhotoService {
 
   //metodo per ottenere tutte le foto
   getPhotos(): Observable<Photo[]> {
-    return this.http.get<Photo[]>(this.apiUrl)
+    return this.http.get<Photo[]>('https://jsonplaceholder.typicode.com/photos/invalid')// rimuovi e torna a funzionare
     .pipe(catchError(this.handleError))
   }
 // cancella tramtie id
